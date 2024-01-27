@@ -2,15 +2,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 100 % of viewport height */
+    /* 100 % of viewport height */
+    height: 100vh;
     background-color: hsl(0, 0%, 95%);
 }
 
 #calculator {
     font-family: Arial, Helvetica, sans-serif;
     background-color: hsl(0, 0%, 15%);
-    border-radius: 15px;
-    max-width: 590px; /* 100px by 5 columns + 10px * 4 gaps + 25px * 2 padding */ 
+    border-radius: 1rem;
+    max-width: 100%;
     overflow: hidden;
 }
 
@@ -36,22 +37,26 @@ body {
 
 #functions {
     display: grid;
-    grid-template-columns: repeat(10, 1fr); /* 10 columns, one fractional unit each */
-    gap: 10px;
-    padding: 25px 25px 0;
+    /* 10 columns, one fractional unit each */
+    grid-template-columns: repeat(10, 1fr);
+    justify-items: center;
+    /* gap: 1rem; */
+    padding: 1rem 1rem 1rem 1rem;
 }
 
 #keypad {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns, one fractional unit each */
-    gap: 10px;
-    padding: 25px;
+    /* 5 columns, one fractional unit each */
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
 }
 
 button {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 3rem;
     border: none;
     background-color: hsl(0, 0%, 30%);
     color: white;
@@ -69,8 +74,8 @@ button:active {
 }
 
 .function {
-    width: 45px;
-    height: 40px;
+    width: 3rem;
+    height: 3rem;
     border-radius: 5px;
     background-color: hsl(0, 0%, 50%);
     font-size: 1rem;
@@ -90,6 +95,7 @@ button:active {
 
 .operator {
     background-color: hsl(0, 0%, 50%);
+}
 
 .operator:hover {
     background-color: hsl(0, 0%, 65%);
@@ -97,4 +103,10 @@ button:active {
 
 .operator:active {
     background-color: hsl(0, 0%, 75%);
+}
+
+@media only screen and (min-width: 600px) {
+    #calculator {
+        max-width: 600px;
+    }
 }
