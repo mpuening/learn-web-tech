@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="calculator">
+        <input id="expression" readonly>
+        <input id="display" readonly>
+        <div id="functions">
+            <button onclick="onMemorySave()" class="function">M+</button>
+            <button onclick="onMemoryRecall()" class="function">MR</button>
+            <button onclick="onButton('Math.sin(')" class="function">sin</button>
+            <button onclick="onButton('Math.cos(')" class="function">cos</button>
+            <button onclick="onButton('Math.tan(')" class="function">tan</button>
+            <button onclick="onButton('Math.log(')" class="function">ln</button>
+            <button onclick="onButton('Math.log10(')" class="function">log</button>
+            <button onclick="onButton('Math.sqrt(')" class="function">&radic;</button>
+            <button onclick="onButton('Math.PI')" class="function">&Pi;</button>
+            <button onclick="onButton('Math.E')" class="function">e</button>
+        </div>
+        <div id="keypad">
+            <button onclick="onButton('7')">7</button>
+            <button onclick="onButton('8')">8</button>
+            <button onclick="onButton('9')">9</button>
+            <button onclick="onUndo()" class="main">C</button>
+            <button onclick="onClear()" class="main">AC</button>
+            <button onclick="onButton('4')">4</button>
+            <button onclick="onButton('5')">5</button>
+            <button onclick="onButton('6')">6</button>
+            <button onclick="onButton('*')" class="operator">&times;</button>
+            <button onclick="onButton('/')" class="operator">&#xF7;</button>
+            <button onclick="onButton('1')">1</button>
+            <button onclick="onButton('2')">2</button>
+            <button onclick="onButton('3')">3</button>
+            <button onclick="onButton('+')" class="operator">+</button>
+            <button onclick="onButton('-')" class="operator">-</button>
+            <button onclick="onButton('0')">0</button>
+            <button onclick="onButton('.')">.</button>
+            <button onclick="onCalculate()">=</button>
+            <button onclick="onButton('(')">(</button>
+            <button onclick="onButton(')')">)</button>
+        </div>
+    </div>
+    <script src="index.js"></script> 
+</body>
+</html>
