@@ -105,7 +105,8 @@ button:active {
     background-color: hsl(0, 0%, 75%);
 }
 
-@media only screen and (min-width: 600px) {
+/* If big screen with a mouse, then do not make it too wide */
+@media only screen and (pointer:fine) and (min-width: 600px) {
     #calculator {
         max-width: 600px;
     }
