@@ -86,7 +86,7 @@ button:active {
     height: 3rem;
     border-radius: 5px;
     background-color: hsl(0, 0%, 50%);
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .main {
@@ -139,20 +139,22 @@ button:active {
 }
 
 /* Old iPhone XR, 11 */
-@media only screen and (-webkit-device-pixel-ratio : 2) {
+@media only screen and (pointer:course) and (-webkit-device-pixel-ratio : 2) {
     button {
         width: 8rem;
         height: 8rem;
         border-radius: 4rem;
         font-size: 4rem;
+        padding: 0;
     }
 
     .function {
-        width: 4rem;
+        width: 6rem;
+        height: 4rem;
     }
 }
 
 /* iPhone 13 and later */
-@media only screen and (-webkit-device-pixel-ratio: 3) {
+@media only screen and (pointer:course) and (-webkit-device-pixel-ratio: 3) {
 
 }
