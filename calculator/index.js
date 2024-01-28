@@ -1,6 +1,6 @@
 
 const expression = document.getElementById("expression");
-const display = document.getElementById("display");
+const result = document.getElementById("result");
 let memory = "";
 
 function onButton(key) {
@@ -9,7 +9,7 @@ function onButton(key) {
 
 function onClear() {
     expression.value = "";
-    display.value = "";
+    result.value = "";
 }
 
 function onUndo() {
@@ -18,7 +18,7 @@ function onUndo() {
     }
 }
 function onMemorySave() {
-    memory = display.value;
+    memory = result.value;
 }
 
 function onMemoryRecall() {
@@ -28,11 +28,11 @@ function onMemoryRecall() {
 function onCalculate() {
     try {
         if (expression.value.length > 0) {
-            display.value = eval(expression.value);
+            result.value = eval(expression.value);
             expression.value = "";
         }
     }
     catch(error) {
-        display.value = "Error";
+        result.value = "Error";
     }
 }

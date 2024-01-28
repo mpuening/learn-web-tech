@@ -8,8 +8,10 @@
 </head>
 <body>
     <div id="calculator">
-        <input id="expression" readonly>
-        <input id="display" readonly>
+        <div id="displays">
+            <input id="expression" readonly>
+            <input id="result" readonly>                
+        </div>
         <div id="functions">
             <button onclick="onMemorySave()" class="function">M+</button>
             <button onclick="onMemoryRecall()" class="function">MR</button>
