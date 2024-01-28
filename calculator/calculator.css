@@ -49,6 +49,12 @@ body {
     color: white;
 }
 
+#keys {
+    /* Stack our keys vertically, function keys over keypad */
+    display: grid;
+    grid-template-columns: 1;
+}
+
 #functions {
     /* Grid of 5 columns, one fractional unit each */
     display: grid;
@@ -156,6 +162,22 @@ button:active {
         /* size of button that works with fixed width */
         width: 3rem;
         font-size: 1.5rem;
+    }
+}
+
+/* Tablets in landscape mode */
+@media only screen and (pointer:course) and (orientation:landscape) {
+    #keys {
+        /* Stack our keys side by side, function keys to the left of keypad */
+        display: flex;
+        flex-direction: row;
+    }
+
+    #functions {
+        /* Grid of 2 columns, one fractional unit each */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
     }
 }
 
