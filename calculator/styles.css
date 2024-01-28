@@ -137,3 +137,13 @@ button:active {
         width: 3rem;
     }
 }
+
+/* iPhone XR, 1792x828px at 326ppi */
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) {
+    button {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 3rem;
+        font-size: 3rem;
+    }
+}
