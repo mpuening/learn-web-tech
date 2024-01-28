@@ -1,0 +1,33 @@
+body {
+    /* background image */
+    background-image: url('background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+
+    /* center components vertically */
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+}
+
+#main {
+    /* center components horizontally */
+    width: 100vw;
+    padding: 10px 0;
+}
+
+.time {
+    /* blue text with a white border */
+    font-family: monospace;
+    font-size: 4rem;
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+}
+
