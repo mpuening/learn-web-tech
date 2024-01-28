@@ -87,7 +87,7 @@ button:active {
     height: 4rem;
     border-radius: 5px;
     background-color: hsl(0, 0%, 50%);
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .main {
@@ -136,6 +136,7 @@ button:active {
 
     .function {
         width: 3rem;
+        font-size: 1.5rem;
     }
 }
 
