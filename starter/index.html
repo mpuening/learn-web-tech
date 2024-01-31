@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+
 <head>
     <title>Starter Document</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div id="main">Hello World</div>
-    <script src="index.js"></script> 
+    <div class="page-container">
+        <header class="header-container">
+            <div class="header">
+                App Name
+            </div>
+        </header>
+        <main class="main-container">
+            <div class="main">
+                <div class="menu">
+                    <div><svg height="50" width="50">
+                            <circle cx="25" cy="25" r="20" stroke="black" stroke-width="3" fill="red" />
+                            Home
+                        </svg> </div>
+                    <div><svg height="50" width="50">
+                            <circle cx="25" cy="25" r="20" stroke="black" stroke-width="3" fill="green" />
+                            Help
+                        </svg> </div>
+                </div>
+                <div class="mainbody">
+                    <div><span id="hello">Hello World</span></div>
+                </div>
+            </div>
+        </main>
+        <script src="index.js"></script>
 </body>
+
 </html>

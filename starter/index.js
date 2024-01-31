@@ -1,2 +1,2 @@
-const main = document.getElementById("main");
-main.innerHTML = "Hello World, from JavaScript."
+const hello = document.getElementById("hello");
+hello.innerHTML = "Hello World, from JavaScript."
