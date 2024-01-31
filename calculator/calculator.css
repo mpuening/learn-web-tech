@@ -369,18 +369,22 @@ button:active {
         color: blue;
     }
 
-    button {
-        width: 12rem;
-        height: 12rem;
-        border-radius: 6rem;
-        font-size: 6rem;
+    /* Place function keys vertically on the left */
+    .main {
+        flex-direction: row;
     }
 
-    .function {
-        width: 7rem;
-        height: 5rem;
-        border-radius: 5px;
-        font-size: 4rem;
+    .menu {
+        flex-direction: column;
+    }
+
+    .functions-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .functions {
+        flex-direction: column;
+        columns: 2;
     }
 
 }
