@@ -11,7 +11,66 @@ body {
     background-color: hsl(0, 0%, 95%);
 }
 
-#calculator {
+/* Mobile first, layout items vertically */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.page-container>* {
+    padding: 3px;
+    margin: 0;
+    flex: 1 100%;
+}
+
+.header-container {
+    flex: 1;
+    padding: 1rem;
+    margin: 0;
+
+}
+
+.header-container>* {
+    flex: 1 100%;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    flex: 9;
+}
+
+.main-container>* {
+    flex: 1 100%;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainbody {
+    flex: 9;
+}
+
+.menu {
+    flex: 1;
+    border-bottom: 1px solid black;
+
+    /* allow menu items to flex depending on landscape/portrait */
+    display: flex;
+    flex-direction: row;
+}
+
+/* =========================================== */
+
+.calculator {
     /* Create a rounded backgroud that takes up the whole width */
     font-family: Arial, Helvetica, sans-serif;
     background-color: hsl(0, 0%, 15%);
@@ -20,11 +79,10 @@ body {
     overflow: hidden;
 }
 
-#displays {
+.displays {
     /* Stack our displays vertically in one column with some padding */
     display: grid;
     grid-template-columns: 1;
-    padding: 1rem 1rem 1rem 1rem;
 }
 
 #expression {
@@ -32,7 +90,7 @@ body {
     width: 100%;
     padding: 0px;
     border: none;
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: right;
     background-color: hsl(0, 0%, 25%);
     color: white;
@@ -43,48 +101,49 @@ body {
     width: 100%;
     padding: 0px;
     border: none;
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: right;
     background-color: hsl(0, 0%, 25%);
     color: white;
 }
 
-#keys {
-    /* Stack our keys vertically, function keys over keypad */
+.functions-container {
+    /* Stack our displays vertically in one column with some padding */
     display: grid;
     grid-template-columns: 1;
+
+    flex: 1;
+    padding: 0.5rem;
+    margin: 0;
 }
 
-#functions {
+.functions-container>* {
+    flex: 1 100%;
+}
+
+.functions {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-around;
+    padding: 0.1rem;
+}
+
+.keypad {
     /* Grid of 5 columns, one fractional unit each */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-}
-
-#keypad {
-    /* Grid of 5 columns, one fractional unit each */
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    gap: 0.1rem;
+    padding: 0.1rem;
 }
 
 button {
-    /* A circular button */
-    width: 8rem;
-    height: 8rem;
-    border: none;
-    border-radius: 4rem;
-    font-size: 4rem;
-    font-weight: bold;
-    padding: 0;
-    background-color: hsl(0, 0%, 30%);
-    color: white;
-    cursor: pointer;
+    /* default size of button */
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    font-size: 2rem;
 }
 
 button:hover {
@@ -99,24 +158,24 @@ button:active {
 
 .function {
     /* rectangular style function button */
-    width: 6rem;
-    height: 4rem;
+    width: 4rem;
+    height: 3rem;
     border-radius: 5px;
     background-color: hsl(0, 0%, 50%);
     font-size: 2rem;
 }
 
-.main {
-    /* main buttons are orange */
+.clear {
+    /* clear buttons are orange */
     background-color: hsl(35, 100%, 50%);
 }
 
-.main:hover {
+.clear:hover {
     /* lighter color when hovered over */
     background-color: hsl(35, 100%, 65%);
 }
 
-.main:active {
+.clear:active {
     /* even lighter color when clicked */
     background-color: hsl(35, 100%, 75%);
 }
@@ -136,57 +195,185 @@ button:active {
     background-color: hsl(0, 0%, 75%);
 }
 
-/* If big screen with a mouse, then do not make it too wide */
-@media only screen and (pointer:fine) and (min-width: 600px) {
-    #calculator {
-        /* use fixed width */
-        max-width: 600px;
-    }
+/* ============================================== */
 
-    #functions {
-        /* Use 10 columns instead, one fractional unit each */
-        grid-template-columns: repeat(10, 1fr);
-        gap: 0.5rem;
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    }
-
-    button {
-        /* size of button that works with fixed width */
-        width: 6rem;
-        height: 6rem;
-        border-radius: 3rem;
-        font-size: 3rem;
-    }
-
-    .function {
-        /* size of button that works with fixed width */
-        width: 3rem;
-        font-size: 1.5rem;
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    .debug {
+        color: lightgray;
     }
 }
 
-/* Tablets in landscape mode */
-@media only screen and (pointer:course) and (orientation:landscape) {
-    #keys {
-        /* Stack our keys side by side, function keys to the left of keypad */
-        display: flex;
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+    .debug {
+        color: black;
+    }
+
+    /* Place function keys vertically on the left */
+    .main {
         flex-direction: row;
     }
 
-    #functions {
-        /* Grid of 2 columns, one fractional unit each */
-        display: grid;
+    .menu {
+        flex-direction: column;
+    }
+
+    .functions-container {
         grid-template-columns: repeat(2, 1fr);
-        align-items: center;
+    }
+
+    .functions {
+        flex-direction: column;
+        columns: 2;
     }
 }
 
-/* Old iPhone XR, 11 */
-@media only screen and (pointer:course) and (-webkit-device-pixel-ratio : 2) {
+/* ========== */
+
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+    .debug {
+        color: pink;
+    }
+
+    button {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 4rem;
+        font-size: 4rem;
+    }
+
+    .function {
+        width: 6rem;
+        height: 4rem;
+        border-radius: 5px;
+        font-size: 3rem;
+    }
 
 }
 
-/* iPhone 13 and later */
-@media only screen and (pointer:course) and (-webkit-device-pixel-ratio: 3) {
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+    .debug {
+        color: red;
+    }
+
+    /* Place function keys vertically on the left */
+    .main {
+        flex-direction: row;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .functions-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .functions {
+        flex-direction: column;
+        columns: 2;
+    }
+
+}
+
+/* ========== */
+
+@media only screen and (min-width: 1024px) and (orientation: portrait) {
+    .debug {
+        color: lightgreen;
+    }
+
+    /* Place function keys above keypad */
+    .main {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: row;
+    }
+
+    .functions-container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-around;
+    }
+
+    .functions {
+        flex-direction: row;
+        columns: 1;
+    }
+
+    button {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 5rem;
+        font-size: 5rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+    .debug {
+        color: green;
+    }
+
+    /* Place function keys above keypad */
+    .main {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: row;
+    }
+
+    .functions-container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-around;
+    }
+
+    .functions {
+        flex-direction: row;
+        columns: 1;
+    }
+
+    button {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 4rem;
+        font-size: 4rem;
+    }
+
+    .function {
+        width: 6rem;
+        height: 4rem;
+        border-radius: 5px;
+        font-size: 3rem;
+    }
+
+}
+
+/* ========== */
+
+@media only screen and (min-width: 1280px) and (orientation: portrait) {
+    .debug {
+        color: lightblue;
+    }
+}
+
+@media only screen and (min-width: 1280px) and (orientation: landscape) {
+    .debug {
+        color: blue;
+    }
+
+    button {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 6rem;
+        font-size: 6rem;
+    }
+
+    .function {
+        width: 7rem;
+        height: 5rem;
+        border-radius: 5px;
+        font-size: 4rem;
+    }
 
 }
