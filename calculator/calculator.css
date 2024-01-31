@@ -208,6 +208,20 @@ button:active {
     .debug {
         color: lightgray;
     }
+
+    button {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 3rem;
+        font-size: 3rem;
+    }
+
+    .function {
+        width: 6rem;
+        height: 4rem;
+        border-radius: 5px;
+        font-size: 3rem;
+    }
 }
 
 @media only screen and (max-width: 767px) and (orientation: landscape) {
