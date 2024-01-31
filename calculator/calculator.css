@@ -142,8 +142,15 @@ button {
     /* default size of button */
     width: 4rem;
     height: 4rem;
+    border: none;
     border-radius: 2rem;
     font-size: 2rem;
+    font-weight: bold;
+    padding: 0;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    cursor: pointer;
+
 }
 
 button:hover {
